@@ -24,3 +24,20 @@ dist-ssr
 *.sw?
 .env
 
+appsettings.json
+appsettings.Development.json
+appsettings.Production.json
+
+# .NET build outputs
+bin/
+obj/
+[Dd]ebug/
+[Rr]elease/
+[Bb]uild/
+[Oo]ut/
+.vs/
+*.dll
+*.exe
+*.pdb
+*.cache
+*.user

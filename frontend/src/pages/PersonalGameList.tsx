@@ -3,12 +3,11 @@ import { useParams } from 'react-router-dom';
 
 //fetch the game list from the steam api using the steamId and the steam api key
 const fetchGameList = async (steamId: string) => {
-    if (import.meta.env.VITE_STEAM_API_KEY == undefined) {
-        console.log("No steam api key found");
+    if (!import.meta.env.VITE_BACKEND_URL) {
+        console.log("No backend URL found");
         return;
     }
-    console.log(import.meta.env.VITE_STEAM_API_KEY);
-    const response = await fetch(`https://api.steampowered.com/IPlayerService/GetOwnedGames/v0001/?key=${import.meta.env.VITE_STEAM_API_KEY}&steamid=${steamId}&format=json`);
+    const response = await fetch(`${import.meta.env.VITE_BACKEND_URL}/api/steam/games/${steamId}`);
     const data = await response.json();
     return data;
 }
