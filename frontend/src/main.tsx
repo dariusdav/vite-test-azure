@@ -2,6 +2,7 @@ import { StrictMode, useState, useEffect } from 'react'
 import { createRoot } from 'react-dom/client'
 import Navbar from './components/Navbar'
 import App from './App.tsx'
+import { BrowserRouter } from 'react-router-dom';
 
 function Main() {
   const [darkMode, setDarkMode] = useState(() => 
@@ -32,6 +33,8 @@ function Main() {
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    <Main />
+    <BrowserRouter>
+      <Main />
+    </BrowserRouter>
   </StrictMode>,
 )
